@@ -18,27 +18,42 @@
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-<cloudHubDeployment>
-	<uri>https://anypoint.mulesoft.com/</uri>
-	<muleVersion>4.2.1</muleVersion>
-	<username>${anypoint.username}</username>
-	<password>${anypoint.password}</password>
-	<applicationName>basic123</applicationName>
-	<environment>${anypoint.environment}</environment>
-	<properties>
-	</properties>
-</cloudHubDeployment>
-</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<plugins>
+		<plugin>
+			<groupId>org.mule.tools.maven</groupId>
+			<artifactId>mule-maven-plugin</artifactId>
+			<version>${mule.maven.plugin.version}</version>
+			<extensions>true</extensions>
+			<configuration>
+				<cloudHubDeployment>
+					<uri>https://anypoint.mulesoft.com/</uri>
+					;
+					<muleVersion>${app.runtime}</muleVersion>
+					<username>premmm</username>
+					<password>Prem@123</password>
+					<applicationName>basic123</applicationName>
+					<environment>Sandbox</environment>
+					<workerType>Micro</workerType>
+					<workers>1</workers>
+					<properties>
+					</properties>
+				</cloudHubDeployment>
+			</configuration>
+			<executions>
+				<execution>
+					<id>deploy</id>
+					<phase>deploy</phase>
+					<goals>
+						<goal>deploy</goal>
+					</goals>
+
+
+				</execution>
+
+			</executions>
+		</plugin>
+	</plugins>
+</build>
 
 	<dependencies>
         <dependency>
